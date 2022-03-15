@@ -35,3 +35,5 @@ Post.init(
     tableName: "post",
   }
 );
+
+module.exports = Post;

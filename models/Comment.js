@@ -39,3 +39,5 @@ Comment.init(
     tableName: "comment",
   }
 );
+
+module.exports = Comment;

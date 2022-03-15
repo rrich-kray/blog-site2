@@ -22,6 +22,13 @@ User.init(
         isEmail: true,
       },
     },
+    password: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: 4,
+      },
+    },
   },
   {
     sequelize,
@@ -30,3 +37,5 @@ User.init(
     tableName: "user",
   }
 );
+
+module.exports = User;
