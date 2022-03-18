@@ -2,11 +2,11 @@ const router = require("express").Router();
 const { Post } = require("../../models/Post");
 const { body, validationResult } = require("express-validator");
 
-router.get(
-  "/post",
+router.post(
+  "/",
   [
     body("title").exists().isLength({ min: 1 }).trim().escape(),
-    body(content).exists().isLength({ min: 1 }).escape(),
+    body("content").exists().isLength({ min: 1 }).escape(),
   ],
   (req, res) => {
     const errors = validationResult(req);

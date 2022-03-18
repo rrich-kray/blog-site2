@@ -5,9 +5,11 @@ const session = require("express-session");
 const path = require("path");
 
 const sequelize = require("./config/connection");
+const User = require("./models/User");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
+  // this code sets up an express.js session and connects the session to the database
   secret: process.env.SECRET,
   cookie: {},
   resave: false,
@@ -27,8 +29,11 @@ app.set("view engine", "handlebars");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(require("./controllers"));
 
 const PORT = process.env.PORT || 3001;
+
+User.sync();
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
