@@ -63,15 +63,15 @@ h3 {
 }
 
 h1 {
-  font-size: 3rem;
-}
-
-h2 {
   font-size: 2rem;
 }
 
-h3 {
+h2 {
   font-size: 1rem;
+}
+
+h3 {
+  font-size: 0.5rem;
 }
 
 .flex-row {
@@ -92,7 +92,20 @@ h3 {
 }
 
 .nav {
-  justify-content: space-between;
+  width: 100%;
+  background-color: --var(--bg4);
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+.nav-links > li {
+  margin: 30px;
 }
 
 .main-container {
@@ -102,12 +115,26 @@ h3 {
 
 .tile-container {
     display: grid;
+    column-gap: 1rem;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
 }
 
 .tile {
     background-color: var(--bg3);
+    margin: 20px;
+    width: 500px;
+    height: 250px;
+}
+
+.tile > h1 {
+  margin: 10px;
+  text-align: center;
+}
+
+.tile > h1 > a {
+  text-decoration: none;
+  color: var(--green1);
 }
 
 .post-container {
@@ -115,7 +142,25 @@ h3 {
     width: 100%;
 }
 
-
 .post-title {
-    text-align: center
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.post-title > h3 {
+  margin: 10px;
+}
+
+.post-body {
+  margin: 20px;
+}
+
+/*
+=================
+Login page
+=================
+*/
+
+.login-form {
+ background-color: rgba(100, 100, 100, 0.25); 
 }

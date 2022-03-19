@@ -16,7 +16,7 @@ Post.init(
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT, // max length is 255 characters
       allowNull: false,
     },
     user_id: {

@@ -8,6 +8,9 @@ const postComment = async (event) => {
       body: JSON.stringify({
         comment: commentText,
       }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     if (response.ok) {
       document.location.replace("/");
@@ -16,3 +19,5 @@ const postComment = async (event) => {
     }
   }
 };
+
+document.querySelector("").addEventListener("click", postComment);

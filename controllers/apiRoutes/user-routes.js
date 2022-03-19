@@ -2,6 +2,40 @@ const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 const { body, validationResult } = require("express-validator");
 
+// file contains routes for creating, deleting and logging in/out users
+
+// get all users
+router.get("/", (req, res) => {
+  User.findAll({
+    attributes: [{ exclude: "password" }],
+  })
+    .then((response) => {
+      res.json(response);
+    })
+    .catch((err) => {
+      res.status(404).json({ message: "No users found" });
+    });
+});
+
+// Return a single user
+router.get("/:id", (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id,
+    },
+    include: {
+      model: "post",
+      attributes: ["title"],
+    },
+  })
+    .then((response) => {
+      res.json(response);
+    })
+    .catch((err) => {
+      res.status(404).json({ message: "User not found" });
+    });
+});
+
 router.post(
   "/",
   body("username").isLength({ min: 1 }).trim().escape(),

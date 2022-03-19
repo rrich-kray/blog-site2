@@ -10,6 +10,9 @@ const loginHandler = async (event) => {
         username: username,
         password: password,
       }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     if (response.ok) {
@@ -19,3 +22,5 @@ const loginHandler = async (event) => {
     }
   }
 };
+
+document.querySelector(".login").addEventListener("click", loginHandler);

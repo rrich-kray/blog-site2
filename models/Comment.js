@@ -12,7 +12,7 @@ Comment.init(
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT, // queries on text datatype is slower and requires more computing power.
       allowNull: false,
     },
     user_id: {

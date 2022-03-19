@@ -3,13 +3,17 @@ const addPost = async () => {
   const postContent = document.querySelector().value;
 
   if (title && postContent) {
-    const response = await fetch("api/post/:id", {
+    const response = await fetch("api/posts", {
       method: "POST",
       body: {
         title: title,
         content: postContent,
       },
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
+
     if (response.ok) {
       document.location.replace("/");
     } else {
@@ -17,3 +21,5 @@ const addPost = async () => {
     }
   }
 };
+
+document.querySelector("").addEventListener("click", addPost);

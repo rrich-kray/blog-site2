@@ -1,5 +1,6 @@
 <div class="tile-container">
-    {{#each post as |post|}}
-        {{post-info post}}
+    {{#each posts as |post|}}
+        {{!-- <p>Test</p> --}}
+        {{>post-info post}}
     {{/each}}
 </div>

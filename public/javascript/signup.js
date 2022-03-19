@@ -12,6 +12,9 @@ const signupHandler = (event) => {
         password: password,
         email: email,
       }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     if (response.ok) {
@@ -21,3 +24,5 @@ const signupHandler = (event) => {
     }
   }
 };
+
+document.querySelector(".signup").addEventListener("click", signupHandler);
