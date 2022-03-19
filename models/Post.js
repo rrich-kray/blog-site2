@@ -19,6 +19,10 @@ Post.init(
       type: DataTypes.TEXT, // max length is 255 characters
       allowNull: false,
     },
+    imageUrl: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

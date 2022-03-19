@@ -30,7 +30,7 @@ router.get("/post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["title", "content", "created_at"],
+    attributes: ["title", "imageUrl", "content", "created_at"],
     include: {
       model: User,
       attributes: ["username"],
