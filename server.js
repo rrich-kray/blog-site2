@@ -11,7 +11,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sess = {
   // this code sets up an express.js session and connects the session to the database
   secret: process.env.SECRET,
-  cookie: {},
+  cookie: { maxAge: 60000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

@@ -2,7 +2,7 @@
     <img class="post-image" src="{{post.image_url}}" alt="article-image">
     <div class="header-container flex-col a-center j-center">
         <h1 class="post-title">{{post.title}}</h1>
-        <h3 class="user">Posted by {{post.user}} on {{post.created_at}}</h3>
+        <h3 class="user">Posted by {{post.user.username}} on {{post.created_at}}</h3>
     </div>
     <p class="post-body">{{post.content}}</p>
     <div class="comment-container flex-col a-center j-center">

@@ -1,0 +1,8 @@
+<div class="header-container flex-row a-center j-center">
+    <h1>My Posts</h1>
+</div>
+<div class="dashboard-container">
+    {{#each posts as |post|}}
+        {{>post-info post}}
+    {{/each}}
+</div>

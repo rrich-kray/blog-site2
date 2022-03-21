@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Post, Comment, User } = require("../../models");
 const { body, validationResult } = require("express-validator");
+const auth = require("../../utils/auth");
 
 // file contains routes for creating, editing and deleting posts
 
@@ -53,11 +54,13 @@ router.get("/:id", (req, res) => {
 
 // create a post
 router.post(
-  "/",
+  "/add-post",
+  auth,
   body("title").isLength({ min: 1 }).escape(),
-  body("content").isLength({ min: 1 }).escape(),
+  body("postContent").isLength({ min: 1 }).escape(),
   body("imageUrl").isLength({ min: 1 }).escape(),
   (req, res) => {
+    console.log(req);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       res.status(400).json({ message: errors.array() });
@@ -68,6 +71,7 @@ router.post(
       content: req.body.postContent,
       image_url: req.body.imageUrl,
       created_at: req.body.created_at,
+      user_id: req.session.user_id,
     }).then((response) => res.json(response));
   }
 );

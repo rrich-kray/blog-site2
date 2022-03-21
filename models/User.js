@@ -29,6 +29,10 @@ User.init(
         len: 4,
       },
     },
+    bio: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
   },
   {
     sequelize,

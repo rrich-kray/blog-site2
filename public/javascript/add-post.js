@@ -4,7 +4,7 @@ const addPost = async () => {
   const imageUrl = document.querySelector(".post-image-url").value;
 
   if (title && postContent) {
-    const response = await fetch("api/posts", {
+    const response = await fetch("/api/posts/add-post", {
       method: "POST",
       body: JSON.stringify({
         title,
@@ -17,7 +17,7 @@ const addPost = async () => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/dashboard");
     } else {
       response.statusText;
     }

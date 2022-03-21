@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
     attributes: [{ exclude: "password" }],
   })
     .then((response) => {
-      console.log(response)
+      console.log(response);
       res.json(response);
     })
     .catch((err) => {
@@ -102,6 +102,7 @@ router.post(
   }
 );
 
+// log out
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

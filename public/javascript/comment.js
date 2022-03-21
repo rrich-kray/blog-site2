@@ -1,12 +1,16 @@
 const postComment = async (event) => {
   event.preventDefault();
   const commentText = document.querySelector(".comment").value;
+  const post_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
 
   if (commentText) {
-    const response = await fetch("api/comments", {
+    const response = await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({
         commentText,
+        post_id,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -15,7 +19,7 @@ const postComment = async (event) => {
     if (response.ok) {
       document.location.reload();
     } else {
-      res.statusText;
+      response.statusText;
     }
   }
 };
@@ -23,7 +27,7 @@ const postComment = async (event) => {
 const deleteComment = async (event) => {
   event.preventDefault();
 
-  const response = await fetch("api/comments/:id", {
+  const response = await fetch("/api/comments/:id", {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +45,7 @@ const editComment = async (event) => {
   event.preventDefault();
 
   const commentText = document.querySelector("").value;
-  const response = await fetch("api/comments/:id", {
+  const response = await fetch("/api/comments/:id", {
     method: "PUT",
     body: {
       commentText,

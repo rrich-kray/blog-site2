@@ -2,6 +2,7 @@ const { Comment, Post } = require("../../models");
 const { body, validationResult } = require("express-validator");
 const User = require("../../models/User");
 const router = require("express").Router();
+const auth = require("../../utils/auth");
 
 // comment routes/
 
@@ -43,14 +44,14 @@ router.get("/:id", (req, res) => {
 });
 
 // create a comment
-router.post("/", body("content").trim().escape(), (req, res) => {
+router.post("/", auth, body("commentText").escape(), (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     res.status(400).json({ message: "Could not post content" });
   }
 
   Comment.create({
-    content: req.body.content,
+    content: req.body.commentText,
     user_id: req.session.user_id,
     post_id: req.body.post_id,
   })
@@ -63,7 +64,7 @@ router.post("/", body("content").trim().escape(), (req, res) => {
 });
 
 // update a comment
-router.put("/:id", (req, res) => {
+router.put("/:id", auth, (req, res) => {
   Comment.update({
     where: {
       id: req.params.id,
@@ -79,7 +80,7 @@ router.put("/:id", (req, res) => {
 });
 
 // Delete a comment
-router.delete("/:id", (req, res) => {
+router.delete("/:id", auth, (req, res) => {
   Comment.destroy({
     where: {
       id: req.params.id,
