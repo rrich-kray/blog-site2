@@ -1,4 +1,4 @@
-const signupHandler = (event) => {
+const signupHandler = async (event) => {
   event.preventDefault();
   const username = document.querySelector(".signup-username").value;
   const email = document.querySelector(".signup-email").value;
@@ -8,9 +8,9 @@ const signupHandler = (event) => {
     const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({
-        username: username,
-        password: password,
-        email: email,
+        username,
+        password,
+        email,
       }),
       headers: {
         "Content-Type": "application/json",

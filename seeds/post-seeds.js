@@ -7,7 +7,7 @@ const postData = [
     content:
       "Occaecat non pariatur et pariatur. Esse laboris est non qui est incididunt sit sunt sunt ipsum ipsum reprehenderit non commodo. Quis minim excepteur nisi reprehenderit ut. Consectetur minim ullamco aute ullamco ea in.",
     user_id: 3,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -18,7 +18,7 @@ const postData = [
     Minim est laboris anim ea duis nostrud magna non exercitation laborum cillum duis do ut. Dolor qui laboris voluptate culpa exercitation pariatur. Est est tempor est quis laborum duis fugiat ex deserunt excepteur consequat occaecat aliqua excepteur. Ex officia eiusmod mollit nisi pariatur ea minim duis tempor veniam enim Lorem. Fugiat sit laboris ut nulla.
     Consectetur eiusmod laboris id nisi aliquip. Fugiat in laborum ipsum anim veniam aliquip ut ut magna anim Lorem labore nostrud do. Aliquip deserunt elit minim reprehenderit fugiat non ea cillum voluptate qui commodo et. Enim qui magna aliquip ipsum minim aute ex aliqua adipisicing minim tempor pariatur sint. Consequat reprehenderit minim ipsum aliqua nostrud.`,
     user_id: 3,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -27,7 +27,7 @@ const postData = [
     content:
       "Aliquip laborum ipsum amet exercitation ea ex nisi dolore Lorem. Commodo voluptate aliqua ex deserunt fugiat aliquip qui aliquip reprehenderit reprehenderit. Laboris ea commodo id do. Voluptate velit adipisicing duis incididunt officia irure. Est duis qui amet ut. Proident aute enim fugiat aliqua adipisicing eu nisi amet. Aliqua exercitation id elit occaecat deserunt veniam.",
     user_id: 5,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -42,7 +42,7 @@ Nostrud do sit occaecat non mollit aute enim elit non qui. Tempor eu excepteur n
 Nisi veniam ullamco do ex nostrud elit ex do. Nostrud est qui incididunt irure. Ullamco nulla voluptate nisi elit anim dolore culpa incididunt. Veniam reprehenderit aliquip quis nostrud velit tempor cupidatat aute laborum Lorem amet minim cillum aute. Fugiat nisi Lorem consequat consectetur. Reprehenderit enim do aute incididunt culpa consequat quis aliqua ut. Est velit est mollit do cillum non et excepteur pariatur eiusmod nostrud ullamco mollit dolor.
 Dolor qui culpa deserunt laborum mollit consequat incididunt. Minim ex esse occaecat ad amet. Qui sit commodo pariatur velit ea. Non proident tempor excepteur mollit dolore voluptate excepteur. Excepteur exercitation pariatur nulla culpa veniam sunt consequat cupidatat culpa exercitation proident. Irure amet incididunt in mollit occaecat aliqua nulla anim enim. Ex consequat consectetur magna laboris irure.`,
     user_id: 2,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -52,7 +52,7 @@ Dolor qui culpa deserunt laborum mollit consequat incididunt. Minim ex esse occa
     content:
       "Dolor consectetur fugiat sit ex reprehenderit laborum laboris dolor Lorem incididunt non officia duis nisi. Consectetur commodo incididunt pariatur magna. Esse reprehenderit in sit sint tempor consequat eu dolor ut magna est tempor. Sint duis eiusmod consequat elit tempor fugiat sint qui aliquip et. Mollit aliqua ex commodo cillum amet sunt ut enim tempor. Duis exercitation mollit sunt eiusmod ea exercitation ipsum tempor esse dolore exercitation.",
     user_id: 4,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -64,7 +64,7 @@ Enim anim ut officia laboris velit aute excepteur ea magna cupidatat excepteur. 
 Adipisicing exercitation dolor magna in qui eiusmod eu minim duis nisi in Lorem reprehenderit cupidatat. Adipisicing occaecat dolor in laborum eiusmod sint aliquip anim. In minim ut mollit veniam. Exercitation Lorem consequat nulla ex amet eiusmod minim cupidatat est nostrud in quis nisi voluptate. Labore irure duis nulla duis amet aute nostrud veniam laboris qui incididunt culpa nostrud culpa. Duis eiusmod amet nisi excepteur proident aute. Adipisicing veniam veniam ipsum incididunt anim tempor irure eu.
 Ea consectetur esse ipsum est laboris occaecat esse ipsum esse anim aute. Id eu Lorem enim do in pariatur quis enim tempor exercitation non. Dolore anim sunt magna ut mollit tempor irure velit ex do deserunt id id.`,
     user_id: 1,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -77,7 +77,7 @@ Voluptate dolore pariatur incididunt amet deserunt pariatur aliqua. Sit enim pro
 Nostrud nulla nisi commodo est cillum. Id qui deserunt ea labore consequat dolore. Occaecat fugiat mollit labore esse ex. Aute ullamco non magna id est eu. Laboris nostrud non ullamco elit sunt aliquip qui nisi commodo occaecat reprehenderit irure. Fugiat dolore magna velit id velit cillum. Eiusmod est proident laboris anim occaecat excepteur ad dolor duis consequat.
 Laborum sint anim in magna. Qui ut consectetur mollit sint esse culpa deserunt enim duis amet. Irure cupidatat duis id incididunt.`,
     user_id: 3,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -86,7 +86,7 @@ Laborum sint anim in magna. Qui ut consectetur mollit sint esse culpa deserunt e
     content:
       "Non ex non esse ad enim proident ipsum mollit cupidatat ullamco minim voluptate. Exercitation exercitation nostrud qui excepteur amet. Enim duis occaecat eiusmod consequat est dolor aliqua culpa mollit fugiat sint.",
     user_id: 5,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -95,7 +95,7 @@ Laborum sint anim in magna. Qui ut consectetur mollit sint esse culpa deserunt e
       "In occaecat ut irure cillum sit excepteur duis aliqua in id veniam minim.",
     content: "Esse cupidatat non minim occaecat ex in do ut aliqua.",
     user_id: 3,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
   {
@@ -104,7 +104,7 @@ Laborum sint anim in magna. Qui ut consectetur mollit sint esse culpa deserunt e
     content:
       "Voluptate et sunt aliqua irure irure ea exercitation ut. Labore adipisicing tempor duis esse et nulla est. Magna mollit cupidatat magna proident occaecat nulla esse nulla id. Velit incididunt nulla non exercitation nisi nulla aliquip. Id deserunt amet ea aute do aute id cillum reprehenderit proident mollit quis excepteur.",
     user_id: 3,
-    imageUrl:
+    image_url:
       "https://www.teahub.io/photos/full/52-526204_4k-hd-wallpapers-technology.jpg",
   },
 ];

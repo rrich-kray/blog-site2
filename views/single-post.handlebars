@@ -1,13 +1,18 @@
 <div class="post-container flex-col a-center">
-    <img src="{{imageUrl}}" alt="article-image">
+    <img class="post-image" src="{{post.image_url}}" alt="article-image">
     <div class="header-container flex-col a-center j-center">
-        <h1 class="post-title">{{title}}</h1>
-        <h3 class="user">Posted by: {{username}}</h3>
+        <h1 class="post-title">{{post.title}}</h1>
+        <h3 class="user">Posted by {{post.user}} on {{post.created_at}}</h3>
     </div>
-    <p class="post-body">{{content}}</p>
+    <p class="post-body">{{post.content}}</p>
     <div class="comment-container">
-        {{#each comment}}
-            {{content}}
+        <h1>Comments</h1>
+        {{#each comments}}
+            {{>comments}}
         {{/each}}
     </div>
+    {{#if loggedIn}}
+        {{>comment-form}}
+    {{/if}}
 </div>
+

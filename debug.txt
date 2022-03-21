@@ -1,0 +1,5 @@
+/api/users/login route is sending a response, because login.js is redirecting user back to homepage
+Problem with logging in/out occurs when you restart the server. Whenever you do, must reseed the database.
+
+# issue 2: single-post template rendering without any dtaa.
+- Data to be rendering is being returned and can be logged in console. 

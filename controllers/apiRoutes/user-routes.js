@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
     attributes: [{ exclude: "password" }],
   })
     .then((response) => {
+      console.log(response)
       res.json(response);
     })
     .catch((err) => {
@@ -38,53 +39,64 @@ router.get("/:id", (req, res) => {
 
 router.post(
   "/",
-  body("username").isLength({ min: 1 }).trim().escape(),
-  body("password").isLength({ min: 1 }).trim().escape(),
-  body("email").isEmail().trim().escape(),
+  body("username").isLength({ min: 1 }).escape(),
+  body("password").isLength({ min: 5 }).escape(),
+  body("email").isEmail().escape(),
   (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      res.json({});
+      return res.status(400).json({ message: errors.array() });
     }
     User.create({
-      username: req.params.username,
-      email: req.params.email,
-      password: req.params.password,
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
     })
       .then((response) => {
+        console.log(response);
         req.session.save(() => {
-          req.session.user_id = response.user_id;
+          req.session.user_id = response.id;
           req.session.username = response.username;
           req.session.loggedIn = true;
+
+          res.json(response);
         });
       })
       .catch((err) => {
-        res.status(400).json({ message: err });
+        res.status(400).json({ message: err.message });
       });
   }
 );
 
 router.post(
   "/login",
-  body("username").isLength({ min: 1 }).escape(),
-  body("password").isLength({ min: 1 }).escape(),
+  body("username").escape(),
+  body("password").escape(),
   (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.json({ message: errors.array() });
+    }
     User.findOne({
       where: {
         username: req.body.username,
       },
     }).then((loginData) => {
       if (!loginData) {
-        window.prompt("No such user found!");
+        res.json({ message: "User not found" });
         return;
       }
 
       req.session.save(() => {
+        // initiate the creation of a session
         req.session.user_id = loginData.id;
         req.session.username = loginData.username;
         req.session.loggedIn = true;
+        console.log(req.session.user_id);
+        console.log(req.session.username);
+        console.log(req.session.loggedIn);
 
-        window.prompt("You are now logged in!");
+        res.json(loginData); // this is being sent, but session is not being created?
       });
     });
   }
@@ -92,7 +104,7 @@ router.post(
 
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
-    res.session.destroy(() => {
+    req.session.destroy(() => {
       res.status(404).end();
     });
   } else {

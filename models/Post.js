@@ -19,7 +19,7 @@ Post.init(
       type: DataTypes.TEXT, // max length is 255 characters
       allowNull: false,
     },
-    imageUrl: {
+    image_url: {
       type: DataTypes.STRING,
       allowNull: false,
     },

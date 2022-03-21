@@ -7,6 +7,7 @@ const { Op } = require("sequelize");
 
 // Get all posts, including username and comments
 router.get("/", (req, res) => {
+  console.log(req.session); // this is console logging. there is a session
   Post.findAll({
     attributes: ["id", "title", "created_at"],
     include: {
@@ -16,7 +17,10 @@ router.get("/", (req, res) => {
   })
     .then((postData) => {
       const posts = postData.map((post) => post.get({ plain: true })); // returns a plain object without all the extra 'stuff' in it
-      res.render("homepage", { posts });
+      res.render("homepage", {
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       res.status(404).json({ message: err.message });
@@ -25,24 +29,27 @@ router.get("/", (req, res) => {
 
 // get single post
 router.get("/post/:id", (req, res) => {
-  // this is rendering correctly
   Post.findOne({
     where: {
       id: req.params.id,
     },
-    attributes: ["title", "imageUrl", "content", "created_at"],
+    attributes: ["title", "image_url", "content", "created_at"],
     include: {
-      model: User,
-      attributes: ["username"],
+      model: Comment,
+      attributes: ["content"],
       include: {
-        model: Comment,
-        attributes: ["content", "user_id", "post_id"],
+        model: User,
+        attributes: ["username"],
       },
     },
   })
     .then((response) => {
       const post = response.get({ plain: true });
-      res.render("single-post", post);
+      console.log(post);
+      res.render("single-post", {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       res.status(404).json({ message: err.message });
@@ -59,7 +66,10 @@ router.get("/", (req, res) => {
     },
   }).then((response) => {
     const results = response.map((result) => result.get({ plain: true }));
-    res.render("homepage", { results });
+    res.render("homepage", {
+      results,
+      loggedIn: req.session.loggedIn,
+    });
   });
 });
 

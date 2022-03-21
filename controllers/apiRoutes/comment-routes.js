@@ -8,7 +8,7 @@ const router = require("express").Router();
 // get all comments
 router.get("/", (req, res) => {
   Comment.findAll({
-    attributes: ["content"],
+    attributes: ["content", "post_id", "user_id"],
     include: {
       model: User,
       attributes: ["username"],
