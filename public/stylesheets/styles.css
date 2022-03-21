@@ -202,16 +202,43 @@ Single-post
 =================
 */
 
+.post-body {
+  font-size: 20px;
+}
+
 .comment-form > label {
   color: white;
 }
 
 .post-image {
   height: 50vh;
-  width: 50vw;
+  width: auto;
 }
 
 .comment {
   width: 50vw;
+  height: 100px;
+}
+
+.single-comment {
+  /* position: absolute; */
+  background-color:rgba(100, 100, 100, 0.25);
+  width: 30vw;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*
+=================
+add-post
+=================
+*/
+
+.post-input {
+  width: 40vw;
+}
+
+.post-content {
   height: 100px;
 }

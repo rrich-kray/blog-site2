@@ -5,9 +5,9 @@
         <h3 class="user">Posted by {{post.user}} on {{post.created_at}}</h3>
     </div>
     <p class="post-body">{{post.content}}</p>
-    <div class="comment-container">
+    <div class="comment-container flex-col a-center j-center">
         <h1>Comments</h1>
-        {{#each comments}}
+        {{#each post.comments}}
             {{>comments}}
         {{/each}}
     </div>

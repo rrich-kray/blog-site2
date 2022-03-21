@@ -1,14 +1,16 @@
 const addPost = async () => {
-  const title = document.querySelector().value;
-  const postContent = document.querySelector().value;
+  const title = document.querySelector(".post-title").value;
+  const postContent = document.querySelector(".post-content").value;
+  const imageUrl = document.querySelector(".post-image-url").value;
 
   if (title && postContent) {
     const response = await fetch("api/posts", {
       method: "POST",
-      body: {
-        title: title,
-        content: postContent,
-      },
+      body: JSON.stringify({
+        title,
+        postContent,
+        imageUrl,
+      }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -22,4 +24,4 @@ const addPost = async () => {
   }
 };
 
-document.querySelector("").addEventListener("click", addPost);
+document.querySelector(".submit").addEventListener("click", addPost);

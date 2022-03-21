@@ -51,28 +51,24 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// create a post
 router.post(
   "/",
-  [
-    body("title").exists().isLength({ min: 1 }).trim().escape(),
-    body("content").exists().isLength({ min: 1 }).escape(),
-  ],
+  body("title").isLength({ min: 1 }).escape(),
+  body("content").isLength({ min: 1 }).escape(),
+  body("imageUrl").isLength({ min: 1 }).escape(),
   (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      console.log("Post was unsuccessful");
-      Promise.reject("Post was unsuccessful");
+      res.status(400).json({ message: errors.array() });
     }
 
     Post.create({
       title: req.body.title,
-      content: req.body.content,
+      content: req.body.postContent,
+      image_url: req.body.imageUrl,
       created_at: req.body.created_at,
-    })
-      .then((response) => {
-        console.log("post was successful!");
-      })
-      .catch((err) => res.status(400).json({ message: err }));
+    }).then((response) => res.json(response));
   }
 );
 
