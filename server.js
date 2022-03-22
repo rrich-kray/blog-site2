@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(require("./controllers"));
 
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3001;
 
 User.sync();
 
