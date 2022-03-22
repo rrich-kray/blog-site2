@@ -232,7 +232,7 @@ Login page
  background-color: var(--bg4); 
  width: 25vw;
  position: absolute;
- left: 40%;
+ left: 37.5%;
  padding: 10px;
 }
 
@@ -252,7 +252,7 @@ Sign up page
   width: 25vw;
   background-color: var(--bg4);
   position: absolute;
-  left: 40%;
+  left:37.5%;
 }
 
 .signup-form > input {
