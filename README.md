@@ -2,12 +2,12 @@
 
 ## Table of Contents
 
-[Description](#description)
-[Installation](#installation)
-[Usage](#usage)
-[Utilizes](#utilizes)
-[Credits](#credits)
-[Questions](#questions)
+[Description](#description)  
+[Installation](#installation)  
+[Usage](#usage)  
+[Utilizes](#utilizes)  
+[Credits](#credits)  
+[Questions](#questions)  
 [License](#license)
 
 ## Description
