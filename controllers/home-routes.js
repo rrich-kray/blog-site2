@@ -91,4 +91,8 @@ router.get("/add-post", (req, res) => {
   });
 });
 
+router.get("/edit-post", (req, res) => {
+  res.render("edit-post", { loggedIn: true });
+});
+
 module.exports = router;

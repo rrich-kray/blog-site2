@@ -14,7 +14,7 @@
 
 ![main screenshot](./public/images/screen1.png)
 
-This project was developed so that users can quickly and easily post about topics of their choosing, as well as comment on existing posts. As my first full-stack web application, it was an excellent introduction to backend/frontend integration, and also gave me the opportunity to work more closely with HTML templating and session storage on the client end. I also used this project as a means to familiarize myself with user input validation techniques using express middleware. Presently, I consider this an MVP build, and plan to introduce additional features and improvements in the future including
+This project was developed so that users can quickly and easily post about topics of their choosing, as well as comment on existing posts. As my first full-stack web application, it was an excellent introduction to backend/frontend integration, and also gave me the opportunity to work with new concepts like HTML templating and cookie storage. I also used this project as a means to familiarize myself with user input validation techniques using express middleware. Presently, I consider this an MVP build, and plan to introduce additional features and improvements in the future including
 
 ## Installation
 
@@ -28,25 +28,27 @@ The homepage consists of posts presented in tile format. Users can navigate to a
 
 Each post also contains a comment section. Logging in enables the user to post their own comment.
 
-![main screenshot](./public/images/comment-section.png)
+![post-comment screenshot](./public/images/post-comment.png)
 
 The navigation bar is present on every page the user visits. This was accomplished by including this element in the primary handlebars template. The navigation bar includes home, login and signup links.
 
-![main screenshot](./public/images/navbar.png)
+![navbar screenshot](./public/images/navbar.png)
 
 The user can use the login link to navigate to a page where they can sign into the website.
 
-![main screenshot](./public/images/login.png)
+![login screenshot](./public/images/login.png)
 
 To create a new account, the user can follow the signup link.
 
-![main screenshot](./public/images/signup.png)
+![signup screenshot](./public/images/signup.png)
 
 When the user is logged in, the navbar will present the following links instead.
 
-![main screenshot](./public/images/navbar-loggedIn.png)
+![navbar-loggedIn screenshot](./public/images/navbar-loggedIn.png)
 
-This was accomplished through the use of conditional statements in the templates. In addition to having the option to log out of the website, the user can also choose to create a post by following its link.
+This was accomplished through the use of conditional statements in the templates. In addition to having the option to log out of the website, the user can also choose to create a post by following its link. Upon doing so, the user will be presented with the following form:
+
+![add-post screenshot](./public/images/add-post.png)
 
 ## Utilizes
 
@@ -58,8 +60,6 @@ This was accomplished through the use of conditional statements in the templates
 - Express
 - Sequelize
 - MySQL
-
-## Credits
 
 ## Questions
 

@@ -76,7 +76,7 @@ router.post(
   }
 );
 
-// update a post
+// edit a post
 router.put("/:id", (req, res) => {
   Post.update({
     title: req.body.title,

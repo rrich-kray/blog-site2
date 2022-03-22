@@ -6,7 +6,7 @@ const auth = require("../utils/auth");
 router.get("/", auth, (req, res) => {
   Post.findAll({
     where: {
-      user_id: req.session.user_id, // need withAuth funtion here, or accessing dashboard while logged out returns error
+      user_id: req.session.user_id, // need withAuth function here, or accessing dashboard while logged out returns error
     },
     attributes: ["id", "title", "created_at"],
     include: {
