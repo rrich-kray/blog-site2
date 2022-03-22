@@ -21,6 +21,7 @@ router.get("/", (req, res) => {
     },
   })
     .then((response) => {
+      console.log(response);
       res.json(response);
     })
     .catch((err) => {
