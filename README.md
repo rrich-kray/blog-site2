@@ -50,6 +50,12 @@ This was accomplished through the use of conditional statements in the templates
 
 ![add-post screenshot](./public/images/add-post.png)
 
+The user can also view their post history by navigating to the dashboard page.
+
+![dashbboard screenshot](./public/images/dashboard.png)
+
+Dashboard posts also contain two additional links for editing and deleting the post.
+
 ## Utilizes
 
 - HTML

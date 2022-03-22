@@ -1,5 +1,8 @@
 <div class="tile flex-col j-center a-center" style="position: relative">
-    <a href="/posts/{{id}}">Edit</a>
+    <div class="edit-delete flex-row a-center j-center">
+        <a href="/posts/{{id}}" style="margin: 5px">Edit Post</a>
+        <a href="/posts/{{id}}" style="margin: 5px">Delete Post</a>
+    </div>
     <h1 class="tile-title"><a href="/post/{{id}}">{{title}}</a></h1>
     <div class="post-info flex-row a-center j-center">
         <p>{{username}}</p>
