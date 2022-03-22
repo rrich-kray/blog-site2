@@ -11,7 +11,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sess = {
   // this code sets up an express.js session and connects the session to the database
   secret: process.env.SECRET,
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 60000, secure: true },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -25,6 +25,7 @@ const hbs = exphbs.create({});
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+app.set("trust proxy", 1);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

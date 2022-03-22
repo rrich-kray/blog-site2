@@ -7,7 +7,6 @@ const { Op } = require("sequelize");
 
 // Get all posts, including username and comments
 router.get("/", (req, res) => {
-  console.log(req.session); // this is console logging. there is a session
   Post.findAll({
     attributes: ["id", "title", "created_at"],
     include: {
