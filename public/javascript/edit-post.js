@@ -1,19 +1,14 @@
-document.querySelectorAll(".edit-icon").forEach((icon) => {
-  icon.addEventListener("click", () => {
-    document.location.replace("/edit-post");
-  });
-});
-
 const editPost = async () => {
   const title = document.querySelector(".post-title").value;
   const postContent = document.querySelector(".post-content").value;
   const imageUrl = document.querySelector(".post-image-url").value;
-  const postId = window.location.toString().split("/")[
+  const post_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
 
-  if (title && postContent) {
-    const response = await fetch(`/api/posts/${postId}`, {
+  if (title && postContent && imageUrl && post_id) {
+    const response = await fetch(`/api/posts/${post_id}`, {
+      // failed to fetch
       method: "PUT",
       body: JSON.stringify({
         title,

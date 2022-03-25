@@ -19,6 +19,8 @@ const sess = {
   }),
 };
 
+// console log the entire function every step of the way; what's difference between thew first amd second login attempts. Check session, wghat is being sent int the dashboard view.
+
 app.use(session(sess));
 
 const hbs = exphbs.create({});

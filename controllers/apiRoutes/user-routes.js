@@ -68,6 +68,7 @@ router.post(
   }
 );
 
+// login
 router.post(
   "/login",
   body("username").escape(),
@@ -92,11 +93,8 @@ router.post(
         req.session.user_id = loginData.id;
         req.session.username = loginData.username;
         req.session.loggedIn = true;
-        console.log(req.session.user_id);
-        console.log(req.session.username);
-        console.log(req.session.loggedIn);
 
-        res.json(loginData); // this is being sent, but session is not being created?
+        res.json(loginData);
       });
     });
   }
@@ -106,10 +104,10 @@ router.post(
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(404).end();
+      res.status(200).end();
     });
   } else {
-    res.status(404).end();
+    res.status(200).end();
   }
 });
 

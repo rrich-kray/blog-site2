@@ -1,7 +1,7 @@
 <div class="tile flex-col j-center a-center" style="position: relative">
     <div class="edit-delete flex-row a-center j-center">
-        <a href="/posts/{{id}}" style="margin: 5px">Edit Post</a>
-        <a href="/posts/{{id}}" style="margin: 5px">Delete Post</a>
+        <a href="/edit-post/{{id}}" class="edit-post" style="margin: 5px">Edit Post</a>
+        <a href="/posts/{{id}}" class="delete-post" style="margin: 5px">Delete Post</a>
     </div>
     <h1 class="tile-title"><a href="/post/{{id}}">{{title}}</a></h1>
     <div class="post-info flex-row a-center j-center">
@@ -10,3 +10,4 @@
     </div>
 </div>
 <script src="javascript/edit-post.js"></script>
+<script src="javascript/delete-post.js"></script>

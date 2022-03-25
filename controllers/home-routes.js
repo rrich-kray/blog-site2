@@ -56,14 +56,16 @@ router.get("/post/:id", (req, res) => {
 });
 
 // Search posts
-router.get("/", (req, res) => {
+router.post("/posts", (req, res) => {
   Post.findAll({
     where: {
+      // this is not working
       content: {
         [Op.like]: req.body.searchTerm,
       },
     },
   }).then((response) => {
+    console.log(response); // not returning a response
     const results = response.map((result) => result.get({ plain: true }));
     res.render("homepage", {
       results,
@@ -90,7 +92,9 @@ router.get("/add-post", (req, res) => {
   });
 });
 
-router.get("/edit-post", (req, res) => {
+// modify route to send data
+// click the link, sends get request to render edit post, sends post id along with it, then data from that page is sent to api route.
+router.get("/edit-post/:id", (req, res) => {
   res.render("edit-post", { loggedIn: true });
 });
 

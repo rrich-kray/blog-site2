@@ -79,16 +79,24 @@ router.post(
 
 // edit a post
 router.put("/:id", (req, res) => {
-  Post.update({
-    title: req.body.title,
-    content: req.body.content,
-  })
+  // route is api/posts/:id
+  Post.update(
+    {
+      title: req.body.title,
+      content: req.body.postContent,
+      image_url: req.body.image_url,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((response) => {
-      console.log(response);
-      window.prompt("Post updated!");
+      res.json(response);
     })
     .catch((err) => {
-      window.prompt(`Could not update post. Error: ${err.message}`);
+      console.log(err);
       res.status(400).json({ message: err.message });
     });
 });
@@ -105,5 +113,7 @@ router.delete("/:id", (req, res) => {
       res.status(400).json({ message: err.message });
     });
 });
+
+// change where the link sends to
 
 module.exports = router;
