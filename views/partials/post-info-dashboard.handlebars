@@ -1,7 +1,7 @@
 <div class="tile flex-col j-center a-center" style="position: relative">
     <div class="edit-delete flex-row a-center j-center">
         <a href="/edit-post/{{id}}" class="edit-post" style="margin: 5px">Edit Post</a>
-        <a href="/posts/{{id}}" class="delete-post" style="margin: 5px">Delete Post</a>
+        <button class="delete-btn" data-id="{{id}}">Delete Post</button>
     </div>
     <h1 class="tile-title"><a href="/post/{{id}}">{{title}}</a></h1>
     <div class="post-info flex-row a-center j-center">

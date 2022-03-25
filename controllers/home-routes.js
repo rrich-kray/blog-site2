@@ -98,4 +98,8 @@ router.get("/edit-post/:id", (req, res) => {
   res.render("edit-post", { loggedIn: true });
 });
 
+// router.get("/delete-post/:id", (req, res) => {
+//   res.render("delete-post", { loggedIn: true });
+// });
+
 module.exports = router;

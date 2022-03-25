@@ -163,6 +163,11 @@ h3 {
     margin: 20px;
     width: 500px;
     height: 250px;
+    transition: 0.25s linear;
+}
+
+.tile:hover {
+  border: 1px solid var(--green1)
 }
 
 .tile > h1 {
@@ -199,9 +204,23 @@ h3 {
   right: 15%;
 }
 
+.edit-post {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+
 .delete-icon {
   top: 5%;
   right: 5%;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  margin: 5px;
 }
 
 .post-container {
@@ -316,7 +335,8 @@ dashboard
 .dashboard-container {
   width: 100vw;
   height: 90vh;
-  background-color: var(--bg4);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
