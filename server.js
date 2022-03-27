@@ -1,3 +1,9 @@
+// Copyright (c) 2022, Ryan Kray
+// All rights reserved.
+
+// This source code is licensed under the BSD-style license found in the
+// LICENSE file in the root directory of this source tree.
+
 const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
